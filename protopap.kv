@@ -1,0 +1,62 @@
+#:kivy 1.4
+
+<Protopap>:
+    orientation: 'vertical'
+    txtOutput: txtOutput
+    #menubar
+    ActionBar:
+        pos_hint: {'top':1}
+        ActionView:
+            use_separator: True
+            ActionPrevious:
+                title: 'Action Bar'
+                with_previous: False
+            ActionOverflow:
+            ActionGroup:
+                text: 'File'
+                ActionButton:
+                    text: 'Load...'
+                ActionButton:
+                    text: 'Save...'
+            ActionGroup:
+                text: 'Help'
+                ActionButton:
+                    text: 'Help file'
+                ActionButton:
+                    text: 'Report a problem'
+                ActionButton:
+                    text: 'About'
+
+
+#    #MainAppArea
+    GridLayout:
+        cols: 2
+        #Nav column
+        BoxLayout:
+            size_hint: 0.2, 1
+            orientation: 'vertical'
+            Button:
+                text: "Map"
+            Button:
+                text: "View"
+            Button:
+                text: "Nav3"
+            Button:
+                text: "Nav4"
+            Button:
+                text: "Nav5"
+            Button:
+                text: "Nav6"
+            Button:
+                text: "Nab7"
+
+        #Main window
+        BoxLayout:
+            orientation: 'vertical'
+            TextInput:
+                id: txtOutput
+                multiline: True
+                text: 'Multiline text out only'
+
+            Label:
+                text: "This is the main window for map"
