@@ -26,6 +26,7 @@
                     text: 'Report a problem'
                 ActionButton:
                     text: 'About'
+                    on_press: root.helpaboutpop(*args)
 
 
 #    #MainAppArea
@@ -60,3 +61,16 @@
 
             Label:
                 text: "This is the main window for map"
+
+<HelpAboutPopup>:
+    title: "About Property Analysis App"
+    size_hint: .5, .5
+    auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Property Analysis App 1.0"
+        Button:
+            text: "Dismiss"
+            size_hint_y: .25
+            on_press: root.dismiss()
