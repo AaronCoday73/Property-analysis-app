@@ -16,6 +16,7 @@
                 text: 'File'
                 ActionButton:
                     text: 'Load...'
+                    on_press: root.fileloadpop(*args)
                 ActionButton:
                     text: 'Save...'
             ActionGroup:
@@ -74,3 +75,20 @@
             text: "Dismiss"
             size_hint_y: .25
             on_press: root.dismiss()
+
+<FileLoadFilePopup>:
+    title: "Load File..."
+    auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Placeholder File Load..."
+        TextInput:
+            id: flpFileName
+            write_tab: False
+        Button:
+            text: "Dismiss"
+            size_hint_y: .25
+            on_press:
+                app.root.txtFileName = flpFileName.text
+                root.dismiss()

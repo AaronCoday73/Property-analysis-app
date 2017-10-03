@@ -3,12 +3,18 @@ from kivy.uix.widget import Widget
 from kivy.uix.popup import Popup
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
+from kivy.properties import StringProperty
+
 
 class HelpAboutPopup(Popup):
     pass
 
+class FileLoadFilePopup(Popup):
+    pass
+
 class ProtoPAP(BoxLayout):
     txtOutput = ObjectProperty(None)
+    txtFileName = StringProperty("No File")
 
     def clear(self):
         self.txtOutput.text = ""
@@ -17,6 +23,10 @@ class ProtoPAP(BoxLayout):
     def helpaboutpop(self, *args):
         HelpAboutPopup().open()
 
+    def fileloadpop(self, *args):
+        print("txtFileName before=" + self.txtFileName + "\n" )
+        FileLoadFilePopup().open()
+        print("txtFileName after=" + self.txtFileName + "\n")
 
 class ProtopapApp(App):
     def build(self):
