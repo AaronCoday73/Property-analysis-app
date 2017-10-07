@@ -4,13 +4,20 @@ from kivy.uix.popup import Popup
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
 from kivy.properties import StringProperty
-
+import os
 
 class HelpAboutPopup(Popup):
     pass
 
 class FileLoadFilePopup(Popup):
-    pass
+
+    def selected(self, filename):
+        print("select: %s" % filename[0])
+
+    def open_file(self, path, filename):
+       #print("path:" + path + "filename:" +filename)
+        with open(os.path.join(path, filename[0])) as f:
+            print(f.read())
 
 class ProtoPAP(BoxLayout):
     txtOutput = ObjectProperty(None)
